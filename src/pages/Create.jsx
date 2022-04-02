@@ -1,5 +1,6 @@
 import urlcat from "urlcat"
 import { useState } from "react"
+
 const BACKEND = process.env.REACT_APP_BACKEND
 const url = urlcat(BACKEND, "/api/holidays")
 
@@ -24,7 +25,7 @@ function Create() {
             if (data.error) {
                 setError(data.error)
             }
-        })
+        }).catch(error => console.log(error))
     };
   
     const handleSubmit = (event) => {
