@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import urlcat from "urlcat"
+
 const BACKEND = process.env.REACT_APP_BACKEND ?? "http://localhost:3001"
 
 function Seed() {
@@ -7,8 +8,8 @@ function Seed() {
 
 useEffect(() => {
     fetch(urlcat(BACKEND, "/api/holidays/seed"))
-    .then(response => response.json())
-    .then(data => setSeed(data))
+    .then((response) => response.json())
+    .then((data) => setSeed(data))
     }, [])
 
 return(
